@@ -1,6 +1,6 @@
 let texto_resultado=document.getElementById("texto_resultado");
 let casillas = document.getElementsByTagName("td");
-for (let i = 0; i < casillas.length; i++) {
+for (let i = 0; i < casillas.length-1; i++) {
   casillas[i].addEventListener("click", mostraralerta, false);
 }
 let resultado = 0;
@@ -10,8 +10,8 @@ let operando1 = "";
 let operando2 = "";
 let dato;
 function mostraralerta() {
+    
   dato = this.innerHTML;
-  
   switch (dato) {
     case "+":
       operacion = "+";
