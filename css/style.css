@@ -10,7 +10,7 @@ div{
     background-color: rgb(4, 90, 43);
     border-radius:30px;
     padding: 20px;
-    height:400px;
+    height:480px;
     width: 300px;
 }
 
@@ -19,7 +19,7 @@ table{
     border: 20px;
     border-collapse: collapse;
     width:300px;
-    height: 400px;
+    height: 480px;
     background-color:ghostwhite;
 
 }
@@ -37,7 +37,16 @@ td{
 }
 td:hover{
     background-color:green;
+    color:white;
 }
 td:focus{
     background-color:black
+}
+
+
+#texto_operaciones{
+    font-size:10px;
+}
+.operaciones{
+    height:30px;
 }

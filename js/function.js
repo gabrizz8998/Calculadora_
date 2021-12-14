@@ -1,4 +1,5 @@
 let texto_resultado = document.getElementById("texto_resultado");
+let texto_operaciones = document.getElementById("texto_operaciones");
 let casillas = document.getElementsByTagName("td");
 for (let i = 0; i < casillas.length - 1; i++) {
   casillas[i].addEventListener("click", mostraralerta, false);
@@ -14,7 +15,8 @@ let operacion_anterior = "";
 
 function mostraralerta() {
   dato = this.innerHTML;
-  console.log(dato);
+  
+
   switch (dato) {
     case "+":
       operacion_concatenada();
@@ -42,8 +44,10 @@ function mostraralerta() {
       } else {
         operando2 = "";
       }
+      texto_operaciones.innerHTML=texto_operaciones.innerHTML.substring(0,texto_operaciones.innerHTML.length-3);
       break;
     case "C":
+      texto_operaciones.innerHTML="";
       resultado = 0;
       operador = 1;
       operacion = "+";
@@ -72,6 +76,10 @@ function mostraralerta() {
       }
       break;
   }
+  if(dato !="="&&dato!="CE"&&dato!="C"){
+    texto_operaciones.innerHTML+= dato;
+  }
+  
 }
 
 function calcular() {
@@ -92,6 +100,7 @@ function calcular() {
       resultado = operando1 / operando2;
       break;
   }
+  texto_operaciones.innerHTML=resultado.toFixed(2);
   return resultado.toFixed(2);
 }
 
